@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAX CALCULATOR</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body style="background-color: #333333">
+    <div class="container">
+      <div class="row">
+        <div class="pt-5 pb-4">
+          <h1 class="fonts text-center">Tax Calculator</h1>
+          <p class="fs-3 text text-light text-center">Tax calculation doesn't have to be tough.Level up your game to calculate your own taxes and find out how much to invest to recieve the maximum tax rebates!</p>
+        </div>
+
+        <div class="col-md-6">
+          <div class="row">
+            <div class="first-one">
+              <div>
+                <p class="mt-4 font-title">
+                  Select Tax Payer Category <span class="text-danger">*</span>
+                </p>
+                <hr class="hrSize" />
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio1"
+                  value="option1"
+                />
+                <label class="form-check-label" for="inlineRadio1"
+                  ><p class="fonts">General</p></label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio2"
+                  value="option2"
+                />
+                <label class="form-check-label" for="inlineRadio2"
+                  ><p class="fonts">Disabled</p></label
+                >
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="inlineRadioOptions"
+                  id="inlineRadio2"
+                  value="option2"
+                />
+                <label class="form-check-label" for="inlineRadio2"
+                  ><p class="fonts">Gazetted Freedom Fighters</p></label
+                >
+              </div>
+            </div>
+
+            <div class="first-one mt-4">
+              <!-- second portion -->
+              <div>
+                <div class="row pt-4">
+                  <div class="col-6 pt-2">
+                    <p class="font-title mt-1">Income Details</p>
+                  </div>
+                  <div class="col-6 pt-2">
+                    <p class="text-end font-title mt-1">Amount</p>
+                  </div>
+                  <hr class="hrSize2" />
+
+                  <!-- second portion Basic pay plus field -->
+                  <div>
+                    <div class="row mt-3">
+                      <div class="col-md-8 fonts"><p>Basic pay</p></div>
+                      <div class="col-md-4">
+                        <input
+                          class="form-control mb-2"
+                          type="text"
+                          value="0"
+                          aria-label="default input example"
+                        />
+                      </div>
+                      <hr class="hrSize2" />
+                    </div>
+
+                    <div class="row mt-2">
+                      <div class="col-md-8 fonts"><p>House rent allowance</p></div>
+                      <div class="col-md-4">
+                        <input
+                          class="form-control mb-2"
+                          type="text"
+                          value="0"
+                          aria-label="default input example"
+                        />
+                      </div>
+                      <hr class="hrSize2" />
+                    </div>
+
+                    <div class="row mt-2">
+                      <div class="col-md-8 fonts"><p>Conveyance allowance</p></div>
+                      <div class="col-md-4">
+                        <input
+                          class="form-control mb-2"
+                          type="text"
+                          value="0"
+                          aria-label="default input example"
+                        />
+                      </div>
+                      <hr class="hrSize2" />
+                    </div>
+
+                    <div class="row mt-2">
+                      <div class="col-md-8 fonts"><p>Medical allowance</p></div>
+                      <div class="col-md-4 mb-2">
+                        <input
+                          class="form-control"
+                          type="text"
+                          value="0"
+                          aria-label="default input example"
+                        />
+                      </div>
+                      <hr class="hrSize2 mt-3" />
+                    </div>
+
+                    <div class="row mt-2">
+                      <div class="col-md-8 fonts">
+                        <p>Other,if any (Festival bonus,performance bonus,Provident
+                          fund,Overtime,Special pay,Interest income etc.)</p>
+                        
+
+                        </p>
+                      </div>
+                      <div class="col-md-4">
+                        <input
+                          class="form-control mb-2"
+                          type="text"
+                          value="0"
+                          aria-label="default input example"
+                        />
+                      </div>
+                      <hr class="hrSize2 mt-2" />
+                    </div>
+
+                    <div class="row mt-2">
+                      <div class="col fonts"><p>Total</p></div>
+                      <div class="col mb-2">
+                        <p style="text-align: right" class="fonts">0</p>
+                      </div>
+                      <hr class="hrSize2" />
+                    </div>
+
+                    <div class="row mt-2">
+                      <div class="col fonts">
+                        <p>Total taxable income</p>
+                        <p>00,000.00</p>
+                      </div>
+                      <div class="col mb-2">
+                        <p class="fonts">Allowable investment</p>
+                        <p class="fonts">00,000.00</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 ps-5">
+          <div class="row">
+            <div class="col-6">
+              <div class="second-one fonts px-3 py-2">
+                <p class="font-title mt-3">
+                  Date of Birth <span class="text-danger">*</span>
+                </p>
+                <hr class="hrSize my-2" />
+                <input type="date" class="form-control mb-1" />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="second-one fonts px-3 py-2">
+                <p class="font-title mt-3">
+                  Gender <span class="text-danger">*</span>
+                </p>
+                <hr class="hrSize my-2" />
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadio1"
+                    value="option1"
+                  />
+                  <label class="form-check-label" for="inlineRadio1"
+                    ><p class="fonts">Male</p></label
+                  >
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="inlineRadioOptions"
+                    id="inlineRadio1"
+                    value="option1"
+                  />
+                  <label class="form-check-label" for="inlineRadio1"
+                    ><p class="fonts">Female</p></label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 pt-4">
+            <div class="second-one px-3 py-2 mt-2">
+              <div class="row">
+                <div class="col-6">
+                  <div class="fixed-height">
+                    <p class="font-title">Income Details</p>
+                  </div>
+
+                  <p class="text-white">Fill the cells application for you</p>
+                </div>
+                <div class="col-6">
+                  <div class="fixed-height"></div>
+                  <p class="text-end font-title">Amount</p>
+                </div>
+                <hr class="hrSize2" />
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-md-8 fonts">
+                  <p>Shanchai Patra/Treasury bills/Tresury bonds</p>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    class="form-control mb-2"
+                    type="text"
+                    value="0"
+                    aria-label="default input example"
+                  />
+                </div>
+                <hr class="hrSize2 mt-2" />
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-md-8 fonts">
+                  <p>Life insurance premium</p>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    class="form-control mb-2"
+                    type="text"
+                    value="0"
+                    aria-label="default input example"
+                  />
+                </div>
+                <hr class="hrSize2" />
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-md-8 fonts">
+                  <p>Stoks/Bonds/Mutual Funds</p>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    class="form-control mb-2"
+                    type="text"
+                    value="0"
+                    aria-label="default input example"
+                  />
+                </div>
+                <hr class="hrSize2" />
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-md-8 fonts">
+                  <p>Contribution to Provident Fund(Employee+Employer)</p>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    class="form-control mb-2"
+                    type="text"
+                    value="0"
+                    aria-label="default input example"
+                  />
+                </div>
+                <hr class="hrSize2" />
+              </div>
+
+              <div class="row mt-2">
+                <div class="col-md-8 fonts">
+                  <p>Others,if any(give details)</p>
+                </div>
+                <div class="col-md-4">
+                  <input
+                    class="form-control mb-2"
+                    type="text"
+                    value="0"
+                    aria-label="default input example"
+                  />
+                </div>
+                <hr class="hrSize2 mt-5" />
+              </div>
+
+              <div class="row mt-2">
+                <div class="col fonts"><p>Total</p></div>
+                <div class="col mb-2">
+                  <p style="text-align: right" class="fonts">0</p>
+                </div>
+                <hr class="hrSize2" />
+              </div>
+
+              <div class="col fonts">
+                <p class="mt-2">Investment required to enjoy maximum tax rebate:</p>
+                <p>00,000.00</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- second portion second part -->
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
