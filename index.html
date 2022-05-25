@@ -88,9 +88,10 @@
                       <div class="col-md-4">
                         <input
                           class="form-control mb-2"
-                          type="text"
+                          type="number"
                           value="0"
                           aria-label="default input example"
+                          id="basic_pay"
                         />
                       </div>
                       <hr class="hrSize2 mt-2" />
@@ -101,9 +102,10 @@
                       <div class="col-md-4">
                         <input
                           class="form-control mb-2"
-                          type="text"
+                          type="number"
                           value="0"
                           aria-label="default input example"
+                          id="house_rent"
                         />
                       </div>
                       <hr class="hrSize2" />
@@ -114,9 +116,10 @@
                       <div class="col-md-4">
                         <input
                           class="form-control mb-2"
-                          type="text"
+                          type="number"
                           value="0"
                           aria-label="default input example"
+                          id="conveyance_allowanc"
                         />
                       </div>
                       <hr class="hrSize2" />
@@ -130,6 +133,7 @@
                           type="text"
                           value="0"
                           aria-label="default input example"
+                          id="medical_allowanc"
                         />
                       </div>
                       <hr class="hrSize2 mt-3" />
@@ -149,6 +153,7 @@
                           type="text"
                           value="0"
                           aria-label="default input example"
+                          id="bonus"
                         />
                       </div>
                       <hr class="hrSize2 mt-2" />
@@ -157,7 +162,7 @@
                     <div class="row mt-2">
                       <div class="col fonts"><p>Total</p></div>
                       <div class="col mb-2">
-                        <p style="text-align: right" class="fonts">0</p>
+                        <p style="text-align: right" class="fonts" id="total">0</p>
                       </div>
                       <hr class="hrSize2" />
                     </div>
@@ -165,11 +170,11 @@
                     <div class="row mt-2">
                       <div class="col fonts">
                         <p>Total taxable income</p>
-                        <p>00,000.00</p>
+                        <p id="total_taxable_income">00,000.00</p>
                       </div>
                       <div class="col mb-2">
                         <p class="fonts">Allowable investment</p>
-                        <p class="fonts">00,000.00</p>
+                        <p class="fonts" id="allowable_investment">00,000.00</p>
                       </div>
                     </div>
                   </div>
@@ -249,9 +254,10 @@
                 <div class="col-md-4">
                   <input
                     class="form-control mb-2"
-                    type="text"
+                    type="number"
                     value="0"
                     aria-label="default input example"
+                    id="t_bills"
                   />
                 </div>
                 <hr class="hrSize2 " />
@@ -264,9 +270,10 @@
                 <div class="col-md-4">
                   <input
                     class="form-control mb-2"
-                    type="text"
+                    type="number"
                     value="0"
                     aria-label="default input example"
+                    id="l_insurance"
                   />
                 </div>
                 <hr class="hrSize2" />
@@ -279,9 +286,10 @@
                 <div class="col-md-4">
                   <input
                     class="form-control mb-2"
-                    type="text"
+                    type="number"
                     value="0"
                     aria-label="default input example"
+                    id="stocks"
                   />
                 </div>
                 <hr class="hrSize2" />
@@ -294,9 +302,10 @@
                 <div class="col-md-4">
                   <input
                     class="form-control mb-2"
-                    type="text"
+                    type="number"
                     value="0"
                     aria-label="default input example"
+                    id="fund"
                   />
                 </div>
                 <hr class="hrSize2" />
@@ -309,9 +318,10 @@
                 <div class="col-md-4">
                   <input
                     class="form-control mb-2"
-                    type="text"
+                    type="number"
                     value="0"
                     aria-label="default input example"
+                    id="details"
                   />
                 </div>
                 <hr class="hrSize2 mt-5" />
@@ -320,14 +330,14 @@
               <div class="row mt-2">
                 <div class="col fonts"><p>Total</p></div>
                 <div class="col mb-2">
-                  <p style="text-align: right" class="fonts">0</p>
+                  <p style="text-align: right" class="fonts" id="total2">0</p>
                 </div>
                 <hr class="hrSize2" />
               </div>
 
               <div class="col fonts">
                 <p class="mt-2">Investment required to enjoy maximum tax rebate:</p>
-                <p>00,000.00</p>
+                <p id="in_tax">00,000.00</p>
               </div>
             </div>
           </div>
@@ -343,5 +353,144 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      var basic_pay = document.getElementById("basic_pay");
+      var house_rent = document.getElementById("house_rent");
+      var conveyance_allowanc = document.getElementById("conveyance_allowanc");
+      var medical_allowanc = document.getElementById("medical_allowanc");
+      var bonusobj = document.getElementById("bonus");
+      var totalObj = document.getElementById("total");
+      var totalTIObj = document.getElementById("total_taxable_income");
+      var totalAIObj = document.getElementById("allowable_investment");
+
+      var t_billsObj = document.getElementById("t_bills");
+      var l_insuranceObj = document.getElementById("l_insurance");
+      var stocksObj = document.getElementById("stocks");
+      var fundObj = document.getElementById("fund");
+      var detailsObj = document.getElementById("details");
+      var total2Obj = document.getElementById("total2");
+      var in_taxObj = document.getElementById("in_tax");
+
+      
+
+
+
+
+      function totalSum(){
+        let basicPay = parseInt(basic_pay.value);
+        let houseRent =  parseInt(house_rent.value);
+        let conveyanceAllowanc = parseInt(conveyance_allowanc.value);
+        let medicalAllowanc =  parseInt(medical_allowanc.value);
+        let bonus = parseInt(bonusobj.value);
+        let total = basicPay + houseRent + conveyanceAllowanc + medicalAllowanc + bonus;
+
+
+
+        totalObj.innerHTML = total;
+
+        let basic50 = basicPay / 2;
+        let basic10 = basicPay / 10;
+
+        let minPayRent = 0;
+        if(basic50 > houseRent){
+          minPayRent = houseRent;
+        }
+        else{
+          minPayRent = basic50;
+        }
+
+        if(minPayRent > 300000){
+          minPayRent = 300000;
+        }
+      
+        let hrOrgValue = houseRent - minPayRent;
+
+
+        let conOrgValue = 0;
+        if(conveyanceAllowanc > 30000){
+          conOrgValue =30000;
+        }
+        else{
+          conOrgValue = conveyanceAllowanc;
+        }
+        conOrgValue = conveyanceAllowanc - conOrgValue;
+
+        
+        let minMA = 0;
+        if(basic10 < medicalAllowanc){
+          minMA = basic10;
+        }
+        else{
+          minMA = medicalAllowanc;
+        }
+
+        if(minMA > 120000){
+          minMA = 120000;
+        }
+        let mediOrgValue = medicalAllowanc - minMA;
+
+        let orgtotal = basicPay + hrOrgValue + conOrgValue + mediOrgValue + bonus;
+        totalTIObj.innerHTML = orgtotal;
+
+        let total_ai =  orgtotal / 4;
+        totalAIObj.innerHTML = total_ai;
+
+
+
+        let t_bills = parseInt(t_billsObj.value);
+        if(t_bills > 0){
+          let l_insurance= parseInt(l_insuranceObj.value);
+          let stocks = parseInt(stocksObj.value);
+          let fund = parseInt(fundObj.value);
+          let details = parseInt(detailsObj.value);
+          let total2 = t_bills + l_insurance + stocks + fund + details;
+          let in_tax = total_ai - total2;
+
+          
+          total2Obj.innerHTML = total2;
+          in_taxObj.innerHTML = in_tax;
+        }
+
+      }
+
+ 
+      
+
+      basic_pay.addEventListener("keyup", function(){
+        totalSum();
+      });
+      house_rent.addEventListener("keyup", function(){
+        totalSum();
+      });
+      conveyance_allowanc.addEventListener("keyup", function(){
+        totalSum();
+      });
+      bonusobj.addEventListener("keyup", function(){
+        totalSum();
+      });
+      medical_allowanc.addEventListener("keyup", function(){
+        totalSum();
+      });
+
+
+      t_billsObj.addEventListener("keyup", function(){
+        totalSum();
+      });
+      l_insuranceObj.addEventListener("keyup", function(){
+        totalSum();
+      });
+      stocksObj.addEventListener("keyup", function(){
+        totalSum();
+      });
+      fundObj.addEventListener("keyup", function(){
+        totalSum();
+      });
+      detailsObj.addEventListener("keyup", function(){
+        totalSum();
+      });
+
+
+    </script>
   </body>
 </html>
