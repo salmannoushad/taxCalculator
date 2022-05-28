@@ -35,9 +35,9 @@
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="inlineRadioOptions"
+                  name="catagory"
                   id="inlineRadio1"
-                  value="option1"
+                  value="1"
                 />
                 <label class="form-check-label" for="inlineRadio1"
                   ><p class="fonts">General</p></label
@@ -47,9 +47,9 @@
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="inlineRadioOptions"
+                  name="catagory"
                   id="inlineRadio2"
-                  value="option2"
+                  value="2"
                 />
                 <label class="form-check-label" for="inlineRadio2"
                   ><p class="fonts">Disabled</p></label
@@ -59,9 +59,9 @@
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="inlineRadioOptions"
+                  name="catagory"
                   id="inlineRadio2"
-                  value="option2"
+                  value="3"
                 />
                 <label class="form-check-label" for="inlineRadio2"
                   ><p class="fonts">Gazetted Freedom Fighters</p></label
@@ -192,7 +192,7 @@
                   Date of Birth <span class="text-danger">*</span>
                 </p>
                 <hr class="hrSize my-2" />
-                <input type="date" class="form-control mb-1" />
+                <input type="date" class="form-control mb-1" id="dob" />
               </div>
             </div>
             <div class="col-6">
@@ -205,9 +205,9 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="inlineRadioOptions"
+                    name="gender"
                     id="inlineRadio1"
-                    value="option1"
+                    value="1"
                   />
                   <label class="form-check-label" for="inlineRadio1"
                     ><p class="fonts">Male</p></label
@@ -218,9 +218,9 @@
                   <input
                     class="form-check-input"
                     type="radio"
-                    name="inlineRadioOptions"
+                    name="gender"
                     id="inlineRadio1"
-                    value="option1"
+                    value="2"
                   />
                   <label class="form-check-label" for="inlineRadio1"
                     ><p class="fonts">Female</p></label
@@ -337,7 +337,7 @@
 
               <div class="col fonts">
                 <p class="mt-2">Investment required to enjoy maximum tax rebate:</p>
-                <p id="in_tax">00,000.00</p>
+                <p><span id="in_tax">00,000.00</span><span id="in_tax_warning"></span></p>
               </div>
             </div>
           </div>
@@ -371,13 +371,40 @@
       var detailsObj = document.getElementById("details");
       var total2Obj = document.getElementById("total2");
       var in_taxObj = document.getElementById("in_tax");
-
-      
-
-
+      var dob = document.getElementById("dob");
+      var in_tax_warning = document.getElementById("in_tax_warning");
 
 
       function totalSum(){
+        let genders = document.getElementsByName("gender");
+        let selectedGender;
+
+        for(let i = 0; i < genders.length; i++) {
+          if(genders[i].checked){
+            selectedGender = genders[i].value;
+          } 
+        }
+        // console.log(selectedGender);
+
+        let dob_value = dob.value;
+        // console.log(dob_value);
+
+
+        let catagories = document.getElementsByName("catagory");
+        let selectedCatagory;
+
+        for(let i = 0; i < catagories.length; i++) {
+          if(catagories[i].checked){
+            selectedCatagory = catagories[i].value;
+          } 
+        }
+
+        let age = new Date("2022-06-30");
+        let dob_value2 = new Date(dob_value);
+        let z = age- dob_value2;
+        let org_age = z / 31536000000;
+    
+
         let basicPay = parseInt(basic_pay.value);
         let houseRent =  parseInt(house_rent.value);
         let conveyanceAllowanc = parseInt(conveyance_allowanc.value);
@@ -385,9 +412,7 @@
         let bonus = parseInt(bonusobj.value);
         let total = basicPay + houseRent + conveyanceAllowanc + medicalAllowanc + bonus;
 
-
-
-        totalObj.innerHTML = total;
+        totalObj.innerHTML = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         let basic50 = basicPay / 2;
         let basic10 = basicPay / 10;
@@ -431,12 +456,28 @@
         let mediOrgValue = medicalAllowanc - minMA;
 
         let orgtotal = basicPay + hrOrgValue + conOrgValue + mediOrgValue + bonus;
-        totalTIObj.innerHTML = orgtotal;
+        totalTIObj.innerHTML = orgtotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         let total_ai =  orgtotal / 4;
-        totalAIObj.innerHTML = total_ai;
-
-
+        if(org_age <= 65 && orgtotal<= 300000 && selectedGender ==1 && selectedCatagory == 1){
+          total_ai = 0;
+        }
+        else if(orgtotal<= 350000 && selectedGender ==2 && selectedCatagory == 1){
+          total_ai = 0;
+        }
+        else if(org_age >= 65  &&  orgtotal<= 350000 && selectedGender ==1 && selectedCatagory == 1){
+          total_ai = 0;
+        }
+        else if(org_age >= 65  &&  orgtotal<= 450000 && selectedCatagory == 2){
+          total_ai = 0;
+        }
+        else if(orgtotal<= 450000 && selectedCatagory == 2){
+          total_ai = 0;
+        }
+        else if(orgtotal<= 475000 && selectedCatagory == 3){
+          total_ai = 0;
+        }
+        totalAIObj.innerHTML = total_ai.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         let t_bills = parseInt(t_billsObj.value);
         if(t_bills > 0){
@@ -447,10 +488,21 @@
           let total2 = t_bills + l_insurance + stocks + fund + details;
           let in_tax = total_ai - total2;
 
+          total2Obj.innerHTML = total2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          in_taxObj.innerHTML = in_tax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+          if(in_tax<=0){
+            in_tax_warning.innerHTML = " you don’t need to invest for tax rebate right now but you are welcome to start your investment journey with us";
+          }
+          else{
+            in_tax_warning.innerHTML = "";
+          }
+
           
-          total2Obj.innerHTML = total2;
-          in_taxObj.innerHTML = in_tax;
         }
+
+
+
 
       }
 

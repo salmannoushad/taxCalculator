@@ -66,3 +66,7 @@ input[type="number"] {
 .fixed-height {
   height: 30px;
 }
+
+#in_tax_warning{
+  color: rgb(255, 174, 174);
+}
