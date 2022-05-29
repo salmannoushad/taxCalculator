@@ -38,7 +38,9 @@
                   name="catagory"
                   id="inlineRadio1"
                   value="1"
+                  
                 />
+                <!-- onchange="totalSum()" -->
                 <label class="form-check-label" for="inlineRadio1"
                   ><p class="fonts">General</p></label
                 >
@@ -50,7 +52,9 @@
                   name="catagory"
                   id="inlineRadio2"
                   value="2"
+                  
                 />
+                <!-- onchange="totalSum()" -->
                 <label class="form-check-label" for="inlineRadio2"
                   ><p class="fonts">Disabled</p></label
                 >
@@ -62,7 +66,9 @@
                   name="catagory"
                   id="inlineRadio2"
                   value="3"
+                  
                 />
+                <!-- onchange="totalSum()" -->
                 <label class="form-check-label" for="inlineRadio2"
                   ><p class="fonts">Gazetted Freedom Fighters</p></label
                 >
@@ -84,11 +90,11 @@
                   <!-- second portion Basic pay plus field -->
                   <div>
                     <div class="row mt-3">
-                      <div class="col-md-8 fonts"><p>Basic pay</p></div>
+                      <div class="col-md-8 fonts"><p>Basic Pay</p></div>
                       <div class="col-md-4">
                         <input
                           class="form-control mb-2"
-                          type="number"
+                          type="text"
                           value="0"
                           aria-label="default input example"
                           id="basic_pay"
@@ -98,11 +104,11 @@
                     </div>
 
                     <div class="row mt-2">
-                      <div class="col-md-8 fonts"><p>House rent allowance</p></div>
+                      <div class="col-md-8 fonts"><p>House Rent Allowance</p></div>
                       <div class="col-md-4">
                         <input
                           class="form-control mb-2"
-                          type="number"
+                          type="text"
                           value="0"
                           aria-label="default input example"
                           id="house_rent"
@@ -112,11 +118,11 @@
                     </div>
 
                     <div class="row mt-2">
-                      <div class="col-md-8 fonts"><p>Conveyance allowance</p></div>
+                      <div class="col-md-8 fonts"><p>Conveyance Allowance</p></div>
                       <div class="col-md-4">
                         <input
                           class="form-control mb-2"
-                          type="number"
+                          type="text"
                           value="0"
                           aria-label="default input example"
                           id="conveyance_allowanc"
@@ -126,7 +132,7 @@
                     </div>
 
                     <div class="row mt-2">
-                      <div class="col-md-8 fonts"><p>Medical allowance</p></div>
+                      <div class="col-md-8 fonts"><p>Medical Allowance</p></div>
                       <div class="col-md-4 mb-2">
                         <input
                           class="form-control"
@@ -141,8 +147,8 @@
 
                     <div class="row mt-2">
                       <div class="col-md-8 fonts">
-                        <p>Other,if any (Festival bonus,performance bonus,Provident
-                          fund,Overtime,Special pay,Interest income etc.)</p>
+                        <p>Other, If any (Festival Bonus,Performance Bonus,Provident
+                          Fund,Overtime,Special Pay,Interest Income etc.)</p>
                         
 
                         </p>
@@ -169,11 +175,11 @@
 
                     <div class="row mt-2">
                       <div class="col fonts">
-                        <p>Total taxable income</p>
+                        <p>Total Taxable Income</p>
                         <p id="total_taxable_income">00,000.00</p>
                       </div>
-                      <div class="col mb-2">
-                        <p class="fonts">Allowable investment</p>
+                      <div class="col mb-3">
+                        <p class="fonts">Allowable Investment</p>
                         <p class="fonts" id="allowable_investment">00,000.00</p>
                       </div>
                     </div>
@@ -184,15 +190,16 @@
           </div>
         </div>
 
-        <div class="col-md-6 ps-5">
+        <div class="col-md-6 ps-md-5">
           <div class="row">
             <div class="col-6">
-              <div class="second-one fonts px-3 py-2">
+              <div class="second-one fonts px-md-3 py-2">
                 <p class="font-title mt-3">
-                  Date of Birth <span class="text-danger">*</span>
+                  Date Of Birth <span class="text-danger">*</span>
                 </p>
                 <hr class="hrSize my-2" />
-                <input type="date" class="form-control mb-1" id="dob" />
+                <input type="date" class="form-control mb-1" id="dob"  />
+                <!-- onchange="totalSum()" -->
               </div>
             </div>
             <div class="col-6">
@@ -208,7 +215,8 @@
                     name="gender"
                     id="inlineRadio1"
                     value="1"
-                  />
+                    />
+                    <!-- onchange="totalSum()" -->
                   <label class="form-check-label" for="inlineRadio1"
                     ><p class="fonts">Male</p></label
                   >
@@ -221,7 +229,9 @@
                     name="gender"
                     id="inlineRadio1"
                     value="2"
+                    
                   />
+                  <!-- onchange="totalSum()" -->
                   <label class="form-check-label" for="inlineRadio1"
                     ><p class="fonts">Female</p></label
                   >
@@ -249,12 +259,12 @@
 
               <div class="row mt-2">
                 <div class="col-md-8 fonts">
-                  <p>Shanchai Patra/Treasury bills/Treasury bonds</p>
+                  <p>Shanchai Patra/Treasury Bills/Treasury Bonds</p>
                 </div>
                 <div class="col-md-4">
                   <input
                     class="form-control mb-2"
-                    type="number"
+                    type="text"
                     value="0"
                     aria-label="default input example"
                     id="t_bills"
@@ -265,12 +275,12 @@
 
               <div class="row mt-2">
                 <div class="col-md-8 fonts">
-                  <p>Life insurance premium</p>
+                  <p>Life Insurance Premium</p>
                 </div>
                 <div class="col-md-4">
                   <input
                     class="form-control mb-2"
-                    type="number"
+                    type="text"
                     value="0"
                     aria-label="default input example"
                     id="l_insurance"
@@ -286,7 +296,7 @@
                 <div class="col-md-4">
                   <input
                     class="form-control mb-2"
-                    type="number"
+                    type="text"
                     value="0"
                     aria-label="default input example"
                     id="stocks"
@@ -302,7 +312,7 @@
                 <div class="col-md-4">
                   <input
                     class="form-control mb-2"
-                    type="number"
+                    type="text"
                     value="0"
                     aria-label="default input example"
                     id="fund"
@@ -313,12 +323,12 @@
 
               <div class="row mt-2">
                 <div class="col-md-8 fonts">
-                  <p>Others,if any(give details)</p>
+                  <p>Others,If any(Give details)</p>
                 </div>
                 <div class="col-md-4">
                   <input
                     class="form-control mb-2"
-                    type="number"
+                    type="text"
                     value="0"
                     aria-label="default input example"
                     id="details"
@@ -335,8 +345,8 @@
                 <hr class="hrSize2" />
               </div>
 
-              <div class="col fonts">
-                <p class="mt-2">Investment required to enjoy maximum tax rebate:</p>
+              <div class="col fonts mb-4">
+                <p class="mt-2 ">Investment Required To Enjoy Maximum Tax Rebate:</p>
                 <p><span id="in_tax">00,000.00</span><span id="in_tax_warning"></span></p>
               </div>
             </div>
@@ -354,6 +364,12 @@
       crossorigin="anonymous"
     ></script>
 
+    <script>
+      function removeComa(str){
+        return str.replace(/,/g,'');
+      }
+
+    </script>
     <script>
       var basic_pay = document.getElementById("basic_pay");
       var house_rent = document.getElementById("house_rent");
@@ -403,14 +419,22 @@
         let dob_value2 = new Date(dob_value);
         let z = age- dob_value2;
         let org_age = z / 31536000000;
-    
+  
+        
 
-        let basicPay = parseInt(basic_pay.value);
-        let houseRent =  parseInt(house_rent.value);
-        let conveyanceAllowanc = parseInt(conveyance_allowanc.value);
-        let medicalAllowanc =  parseInt(medical_allowanc.value);
-        let bonus = parseInt(bonusobj.value);
+        let basicPay = parseInt(removeComa(basic_pay.value));
+        let houseRent =  parseInt(removeComa(house_rent.value));
+        let conveyanceAllowanc = parseInt(removeComa(conveyance_allowanc.value));
+        let medicalAllowanc =  parseInt(removeComa(medical_allowanc.value));
+        let bonus = parseInt(removeComa(bonusobj.value));
         let total = basicPay + houseRent + conveyanceAllowanc + medicalAllowanc + bonus;
+
+        
+        basic_pay.value = removeComa(basic_pay.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        house_rent.value = removeComa(house_rent.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        conveyance_allowanc.value = removeComa(conveyance_allowanc.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        medical_allowanc.value = removeComa(medical_allowanc.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        bonusobj.value = removeComa(bonusobj.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
         totalObj.innerHTML = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
@@ -479,20 +503,30 @@
         }
         totalAIObj.innerHTML = total_ai.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-        let t_bills = parseInt(t_billsObj.value);
-        if(t_bills > 0){
-          let l_insurance= parseInt(l_insuranceObj.value);
-          let stocks = parseInt(stocksObj.value);
-          let fund = parseInt(fundObj.value);
-          let details = parseInt(detailsObj.value);
+        let t_bills = parseInt(removeComa(t_billsObj.value));
+        t_billsObj.value = removeComa(t_billsObj.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        console.log(t_bills);
+        if(t_bills >= 0){
+          let l_insurance= parseInt(removeComa(l_insuranceObj.value));
+          let stocks = parseInt(removeComa(stocksObj.value));
+          let fund = parseInt(removeComa(fundObj.value));
+          let details = parseInt(removeComa(detailsObj.value));
           let total2 = t_bills + l_insurance + stocks + fund + details;
           let in_tax = total_ai - total2;
+
+          l_insuranceObj.value = removeComa(l_insuranceObj.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          stocksObj.value = removeComa(stocksObj.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          fundObj.value = removeComa(fundObj.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          detailsObj.value = removeComa(detailsObj.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
 
           total2Obj.innerHTML = total2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           in_taxObj.innerHTML = in_tax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+
           if(in_tax<=0){
-            in_tax_warning.innerHTML = " you don’t need to invest for tax rebate right now but you are welcome to start your investment journey with us";
+            in_taxObj.innerHTML = "";
+            in_tax_warning.innerHTML = " You don’t need to invest for tax rebate right now but you are welcome to start your investment journey with us";
           }
           else{
             in_tax_warning.innerHTML = "";
@@ -500,9 +534,10 @@
 
           
         }
-
-
-
+        else if(isNaN(t_bills)){
+          total2Obj.innerHTML = 0;
+          in_taxObj.innerHTML = 0;
+        }
 
       }
 
