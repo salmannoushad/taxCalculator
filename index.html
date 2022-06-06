@@ -96,9 +96,11 @@ input[type="number"] {
           <h1 class="fonts text-center">Tax Calculator</h1>
           <p class="fs-3 text text-light text-center">Tax calculation doesn't have to be tough.Level up your game to calculate your own taxes and find out how much to invest to recieve the maximum tax rebates!</p>
         </div> -->
-
+        <p id="warningMessage" style="text-align: center; color:
+        rgb(248, 252, 25); font-weight: bolder; font-size: large; padding: 20px;"></p>
         <div class="col-md-6">
           <div class="row">
+
             <div class="first-one">
               <div >
                 <p class="mt-4 font-title">
@@ -148,6 +150,7 @@ input[type="number"] {
                   ><p class="fonts">Gazetted Freedom Fighters</p></label
                 >
               </div>
+
             </div>
 
             <div class="first-one mt-4">
@@ -170,7 +173,8 @@ input[type="number"] {
                         <input
                           class="form-control mb-2"
                           type="text"
-                          value="0"
+                          placeholder="0"
+                          
                           aria-label="default input example"
                           id="basic_pay"
                         />
@@ -184,7 +188,7 @@ input[type="number"] {
                         <input
                           class="form-control mb-2"
                           type="text"
-                          value="0"
+                          placeholder="0"
                           aria-label="default input example"
                           id="house_rent"
                         />
@@ -198,7 +202,7 @@ input[type="number"] {
                         <input
                           class="form-control mb-2"
                           type="text"
-                          value="0"
+                          placeholder="0"
                           aria-label="default input example"
                           id="conveyance_allowanc"
                         />
@@ -212,7 +216,7 @@ input[type="number"] {
                         <input
                           class="form-control"
                           type="text"
-                          value="0"
+                          placeholder="0"
                           aria-label="default input example"
                           id="medical_allowanc"
                         />
@@ -232,7 +236,7 @@ input[type="number"] {
                         <input
                           class="form-control mb-2"
                           type="text"
-                          value="0"
+                          placeholder="0"
                           aria-label="default input example"
                           id="bonus"
                         />
@@ -276,6 +280,7 @@ input[type="number"] {
                 <input type="date" class="form-control mb-1" id="dob"  />
                 <!-- onchange="totalSum()" -->
               </div>
+
             </div>
             <div class="col-6">
               <div class="second-one fonts px-3 py-2">
@@ -312,6 +317,8 @@ input[type="number"] {
                   >
                 </div>
               </div>
+              <p id="warningMessage3" style="text-align: center; color:
+              red;"></p>
             </div>
           </div>
 
@@ -340,7 +347,7 @@ input[type="number"] {
                   <input
                     class="form-control mb-2"
                     type="text"
-                    value="0"
+                    placeholder="0"
                     aria-label="default input example"
                     id="t_bills"
                   />
@@ -356,7 +363,7 @@ input[type="number"] {
                   <input
                     class="form-control mb-2"
                     type="text"
-                    value="0"
+                    placeholder="0"
                     aria-label="default input example"
                     id="l_insurance"
                   />
@@ -372,7 +379,7 @@ input[type="number"] {
                   <input
                     class="form-control mb-2"
                     type="text"
-                    value="0"
+                    placeholder="0"
                     aria-label="default input example"
                     id="stocks"
                   />
@@ -388,7 +395,7 @@ input[type="number"] {
                   <input
                     class="form-control mb-2"
                     type="text"
-                    value="0"
+                    placeholder="0"
                     aria-label="default input example"
                     id="fund"
                   />
@@ -404,7 +411,7 @@ input[type="number"] {
                   <input
                     class="form-control mb-2"
                     type="text"
-                    value="0"
+                    placeholder="0"
                     aria-label="default input example"
                     id="details"
                   />
@@ -495,13 +502,29 @@ input[type="number"] {
         let z = age- dob_value2;
         let org_age = z / 31536000000;
   
-        
+        if( selectedGender != null && dob_value2 !=null  && selectedCatagory != null) {
 
         let basicPay = parseInt(removeComa(basic_pay.value));
+        if(isNaN(basicPay)){
+          basicPay = 0
+        }
         let houseRent =  parseInt(removeComa(house_rent.value));
+        if(isNaN(houseRent)){
+          houseRent = 0
+        }
+        console.log(houseRent);
         let conveyanceAllowanc = parseInt(removeComa(conveyance_allowanc.value));
+        if(isNaN(conveyanceAllowanc)){
+          conveyanceAllowanc = 0
+        }
         let medicalAllowanc =  parseInt(removeComa(medical_allowanc.value));
+        if(isNaN(medicalAllowanc)){
+          medicalAllowanc = 0
+        }
         let bonus = parseInt(removeComa(bonusobj.value));
+        if(isNaN(bonus)){
+          bonus = 0
+        }
         let total = basicPay + houseRent + conveyanceAllowanc + medicalAllowanc + bonus;
 
         
@@ -580,12 +603,27 @@ input[type="number"] {
 
         let t_bills = parseInt(removeComa(t_billsObj.value));
         t_billsObj.value = removeComa(t_billsObj.value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        console.log(t_bills);
+        if(isNaN(t_bills)){
+          t_bills = 0
+        }
+        // console.log(t_bills);
         if(t_bills > 0){
           let l_insurance= parseInt(removeComa(l_insuranceObj.value));
+          if(isNaN(l_insurance)){
+            l_insurance = 0
+        }
           let stocks = parseInt(removeComa(stocksObj.value));
+          if(isNaN(stocks)){
+            stocks = 0
+        }
           let fund = parseInt(removeComa(fundObj.value));
+          if(isNaN(fund)){
+            fund = 0
+        }
           let details = parseInt(removeComa(detailsObj.value));
+          if(isNaN(details)){
+            details = 0
+        }
           let total2 = t_bills + l_insurance + stocks + fund + details;
           let in_tax = total_ai - total2;
 
@@ -607,12 +645,18 @@ input[type="number"] {
             in_tax_warning.innerHTML = "";
           }
 
+
           
         }
         else if(isNaN(t_bills)){
           total2Obj.innerHTML = 0;
           in_taxObj.innerHTML = 0;
         }
+      }
+      else{
+        let warningM = document.getElementById('warningMessage');
+        warningM.innerHTML = "Please select Category, Date Of Birth, and Gender"
+      }
 
       }
 
@@ -654,5 +698,6 @@ input[type="number"] {
 
 
     </script>
+    <script src="index.js"></script>
   </body>
 </html>
